@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Fri May 05 2023 11:11:18 GMT+0700 (Western Indonesia Time)|
+|**Generation Date and Time**<br>Fri May 05 2023 13:52:56 GMT+0700 (Western Indonesia Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.9.0|
 |**Generation Platform**<br>Visual Studio Code|
@@ -9,7 +9,7 @@
 |**Service Type**<br>SAP System (ABAP On Premise)|
 |**Service URL**<br>https://training:8001/sap/opu/odata/sap/ZUI_FLIGHTSCHEDULE_XX_SRV
 |**Module Name**<br>flightschedulexx|
-|**Application Title**<br>Flight Schedule|
+|**Application Title**<br>Flight Schedule |
 |**Namespace**<br>mika.sap|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>1.71.50|
