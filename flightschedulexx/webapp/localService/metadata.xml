@@ -24,7 +24,8 @@
                 <Property Name="Countryto" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/>
                 <Property Name="Cityto" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Arrival city" sap:value-list="standard"/>
                 <Property Name="Airpto" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Destination airport"/>
-                <Property Name="Fltime" Type="Edm.Int32" sap:label="Natural number"/>
+                <Property Name="Fltime" Type="Edm.Int32" sap:label="Flight Time"/>
+                <NavigationProperty Name="to_Airline_XX" Relationship="ZUI_FLIGHTSCHEDULE_XX_SRV.assoc_66074FB5F93499D5E6A26CF8F39F86B7" FromRole="FromRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7" ToRole="ToRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
                 <NavigationProperty Name="to_VH_SGEOCITY_FROM_XX" Relationship="ZUI_FLIGHTSCHEDULE_XX_SRV.assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118" FromRole="FromRole_assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118" ToRole="ToRole_assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118"/>
                 <NavigationProperty Name="to_VH_SGEOCITY_TO_XX" Relationship="ZUI_FLIGHTSCHEDULE_XX_SRV.assoc_57AB88485C7C15410DB8813E6472BC43" FromRole="FromRole_assoc_57AB88485C7C15410DB8813E6472BC43" ToRole="ToRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
             </EntityType>
@@ -38,17 +39,31 @@
                 <Property Name="Latitude" Type="Edm.Double" sap:label="Geographical width"/>
                 <Property Name="Longitude" Type="Edm.Double" sap:label="Geographical length"/>
             </EntityType>
-            <Association Name="assoc_57AB88485C7C15410DB8813E6472BC43" sap:content-version="1">
-                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" Multiplicity="1" Role="FromRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
-                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_VH_SGEOCITY_XXType" Multiplicity="0..1" Role="ToRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
-            </Association>
+            <EntityType Name="ZI_Airline_XXType" sap:label="Interface View SCARR" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline"/>
+                <Property Name="Carrname" Type="Edm.String" MaxLength="20" sap:label="Airline"/>
+                <Property Name="Currcode" Type="Edm.String" MaxLength="5" sap:label="Airline Currency" sap:semantics="currency-code"/>
+                <Property Name="Url" Type="Edm.String" MaxLength="255" sap:label="URL"/>
+            </EntityType>
             <Association Name="assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118" sap:content-version="1">
                 <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" Multiplicity="1" Role="FromRole_assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118"/>
                 <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_VH_SGEOCITY_XXType" Multiplicity="0..1" Role="ToRole_assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118"/>
             </Association>
+            <Association Name="assoc_57AB88485C7C15410DB8813E6472BC43" sap:content-version="1">
+                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" Multiplicity="1" Role="FromRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
+                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_VH_SGEOCITY_XXType" Multiplicity="0..1" Role="ToRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
+            </Association>
+            <Association Name="assoc_66074FB5F93499D5E6A26CF8F39F86B7" sap:content-version="1">
+                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" Multiplicity="1" Role="FromRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
+                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZI_Airline_XXType" Multiplicity="0..1" Role="ToRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
+            </Association>
             <EntityContainer Name="ZUI_FLIGHTSCHEDULE_XX_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="ZC_FlSchdl_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="ZC_VH_SGEOCITY_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_VH_SGEOCITY_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_Airline_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZI_Airline_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <AssociationSet Name="assoc_57AB88485C7C15410DB8813E6472BC43" Association="ZUI_FLIGHTSCHEDULE_XX_SRV.assoc_57AB88485C7C15410DB8813E6472BC43" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="ZC_FlSchdl_XX" Role="FromRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
                     <End EntitySet="ZC_VH_SGEOCITY_XX" Role="ToRole_assoc_57AB88485C7C15410DB8813E6472BC43"/>
@@ -56,6 +71,10 @@
                 <AssociationSet Name="assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118" Association="ZUI_FLIGHTSCHEDULE_XX_SRV.assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="ZC_FlSchdl_XX" Role="FromRole_assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118"/>
                     <End EntitySet="ZC_VH_SGEOCITY_XX" Role="ToRole_assoc_A4F6B6A7B37A03F6C8E3EBBEFF580118"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_66074FB5F93499D5E6A26CF8F39F86B7" Association="ZUI_FLIGHTSCHEDULE_XX_SRV.assoc_66074FB5F93499D5E6A26CF8F39F86B7" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZC_FlSchdl_XX" Role="FromRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
+                    <End EntitySet="ZI_Airline_XX" Role="ToRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
                 </AssociationSet>
             </EntityContainer>
             <Annotations Target="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType/Cityfrom" xmlns="http://docs.oasis-open.org/odata/ns/edm">

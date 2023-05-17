@@ -20,12 +20,12 @@
                 "uri": "/sap/opu/odata/sap/ZUI_FLIGHTSCHEDULE_XX_SRV/",
                 "type": "OData",
                 "settings": {
-                    "odataVersion": "2.0",
                     "annotations": [
-                        "annotation",
-                        "mainService_Annotation"
+                        "mainService_Annotation",
+                        "annotation"
                     ],
-                    "localUri": "localService/metadata.xml"
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
                 }
             },
             "annotation": {
