@@ -33,6 +33,13 @@
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="Period" />
                                 </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="to_Airline_XX/Carrname" />
+                                </Record>
+                                <Record Type="UI.DataFieldWithUrl">
+                                    <PropertyValue Property="Value" Path="to_Airline_XX/Url" />
+                                    <PropertyValue Property="Url" Path="to_Airline_XX/Url" />
+                                </Record>
                             </Collection>
                         </PropertyValue>
                     </Record>
@@ -51,12 +58,12 @@
                             <PropertyValue Property="Facets">
                                 <Collection>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String="Origin" />
+                                        <PropertyValue Property="Label" String="{@i18n>origin}" />
                                         <PropertyValue Property="ID" String="Origin" />
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Origin" />
                                     </Record>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String="Destination" />
+                                        <PropertyValue Property="Label" String="{@i18n>destination}" />
                                         <PropertyValue Property="ID" String="Destination" />
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Destination" />
                                     </Record>
