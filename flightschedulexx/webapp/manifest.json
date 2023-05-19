@@ -106,6 +106,22 @@
             "config": {},
             "routes": [],
             "targets": {}
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "AfterFacet|ZC_FlSchdl_XX|FlightRoute": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "mika.sap.flightschedulexx.ext.fragment.CustomSection",
+                            "type": "XML",
+                            "sap.ui.generic.app": {
+                                "title": "Custom Section"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "sap.ui.generic.app": {

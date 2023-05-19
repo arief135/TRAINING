@@ -1,0 +1,25 @@
+<core:FragmentDefinition 
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+    xmlns:vbm="sap.ui.vbm"
+    >
+	<l:VerticalLayout id="_IDGenVerticalLayout1" >
+
+        <vbm:AnalyticMap id="vbi">
+            <vbm:vos>
+                <vbm:Routes id="_IDGenRoutes1">
+                    <vbm:Route 
+                        id="_IDGenRoute1" 
+                        position="{FromLongitude};{FromLatitude};0; {ToLongitude};{ToLatitude};0"
+                        color="rgb(117,148,34)" 
+                        colorBorder="rgb(255,255,255)" 
+                        linewidth="3"
+                        end="1"
+                        routetype="Geodesic" />
+                </vbm:Routes>
+            </vbm:vos>
+        </vbm:AnalyticMap>
+
+	</l:VerticalLayout>
+</core:FragmentDefinition>
