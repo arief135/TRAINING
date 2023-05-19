@@ -151,42 +151,107 @@
                 </Annotation>
                 <Annotation Term="UI.HeaderInfo">
                     <Record Type="UI.HeaderInfoType">
-                        <PropertyValue Property="TypeName" String="Flight"/>
-                        <PropertyValue Property="TypeNamePlural" String="Flights"/>
+                        <PropertyValue Property="TypeName" String="Flight" />
+                        <PropertyValue Property="TypeNamePlural" String="Flights" />
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="Carrid"/>
+                                <PropertyValue Property="Value">
+                                    <Apply Function="odata.concat">
+                                        <String>Airline: </String>
+                                        <Path>Carrid</Path>
+                                    </Apply>
+                                </PropertyValue>
                             </Record>
                         </PropertyValue>
                         <PropertyValue Property="Description">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="Fldate"/>
+                                <PropertyValue Property="Value">
+                                    <Apply Function="odata.concat">
+                                        <String>Connection Number: </String>
+                                        <Path>Connid</Path>
+                                    </Apply>
+                                </PropertyValue>
                             </Record>
                         </PropertyValue>
                     </Record>
                 </Annotation>
-            </Annotations>
-            <Annotations Target="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlightCountPerYear_XXType">
-
-                <Annotation Term="UI.PresentationVariant" Qualifier="ChartPresentation" >
-                    <Record Type="UI.PresentationVariantType">
-                        <PropertyValue Property="SortOrder">
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
                             <Collection>
-                                <Record Type="com.sap.vocabularies.Common.v1.SortOrderType">
-                                    <PropertyValue Property="Descending" Bool="false"/>
-                                    <PropertyValue Property="Property" PropertyPath="FlightYear"/>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Planetype" />
                                 </Record>
-                            </Collection>
-                        </PropertyValue>
-
-                        <PropertyValue Property="Visualizations">
-                            <Collection>
-                                <AnnotationPath>@UI.Chart#FlightPerYear</AnnotationPath>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Price" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Paymentsum" />
+                                </Record>
                             </Collection>
                         </PropertyValue>
                     </Record>
                 </Annotation>
-            
+                <Annotation Term="UI.FieldGroup" Qualifier="SeatInformation">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Seatsmax" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SeatsmaxB" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SeatsmaxF" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Seatsocc" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SeatsoccB" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SeatsoccF" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="HeaderInfo">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Fldate" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#HeaderInfo" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="General Information" />
+                            <PropertyValue Property="ID" String="GeneralInformation" />
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation" />
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Seat Information" />
+                            <PropertyValue Property="ID" String="SeatInformation" />
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SeatInformation" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlightCountPerYear_XXType">
                 <Annotation Term="UI.Chart" Qualifier="FlightPerYear">
                     <Record Type="UI.ChartDefinitionType">
                         <PropertyValue Property="Title" String="Flight Count" />
