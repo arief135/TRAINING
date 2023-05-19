@@ -139,6 +139,15 @@
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage"
+                        },
+                        "pages": {
+                            "ObjectPage|ZC_Flight_XX": {
+                                "component": {
+                                    "name": "sap.suite.ui.generic.template.ObjectPage"
+                                },
+                                "entitySet": "ZC_Flight_XX",
+                                "navigationProperty": "to_Flight_XX"
+                            }
                         }
                     }
                 }
