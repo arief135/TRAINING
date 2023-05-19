@@ -154,7 +154,7 @@
             </Association>
             <Association Name="assoc_FFE814AB0DE7D8BE7F2469734DECAFD1" sap:content-version="1">
                 <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_Flight_XXType" Multiplicity="1" Role="FromRole_assoc_FFE814AB0DE7D8BE7F2469734DECAFD1"/>
-                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_Booking_XXType" Multiplicity="0..1" Role="ToRole_assoc_FFE814AB0DE7D8BE7F2469734DECAFD1"/>
+                <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_Booking_XXType" Multiplicity="*" Role="ToRole_assoc_FFE814AB0DE7D8BE7F2469734DECAFD1"/>
             </Association>
             <Association Name="assoc_AC75DC341848C718579A6CD737D7AB7C" sap:content-version="1">
                 <End Type="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlightCountPerYear_XXType" Multiplicity="1" Role="FromRole_assoc_AC75DC341848C718579A6CD737D7AB7C"/>
