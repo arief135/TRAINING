@@ -46,6 +46,10 @@
                 <Property Name="Countryto" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/>
                 <Property Name="Cityto" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Arrival city" sap:value-list="standard"/>
                 <Property Name="Airpto" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Destination airport"/>
+                <Property Name="FromLatitude" Type="Edm.Double" sap:label="Geographical width"/>
+                <Property Name="FromLongitude" Type="Edm.Double"/>
+                <Property Name="ToLatitude" Type="Edm.Double" sap:label="Geographical width"/>
+                <Property Name="ToLongitude" Type="Edm.Double"/>
                 <Property Name="Fltime" Type="Edm.Int32" sap:label="Flight Time"/>
                 <Property Name="Deptime" Type="Edm.Time" Precision="0" sap:label="Departure time"/>
                 <Property Name="Arrtime" Type="Edm.Time" Precision="0" sap:label="Arrival Time"/>
@@ -87,7 +91,7 @@
                 <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Lang."/>
                 <Property Name="CalendarMonthName" Type="Edm.String" MaxLength="60" sap:label="Short Descript."/>
             </EntityType>
-            <EntityType Name="ZC_Booking_XXType" sap:label="Consumption View SBOOK" sap:content-version="1">
+            <EntityType Name="ZC_Booking_XXType" m:HasStream="true" sap:label="Consumption View SBOOK" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="Carrid"/>
                     <PropertyRef Name="Connid"/>
@@ -117,6 +121,7 @@
                 <Property Name="Passname" Type="Edm.String" MaxLength="25" sap:label="Passenger Name"/>
                 <Property Name="Passform" Type="Edm.String" MaxLength="15" sap:label="Form of address"/>
                 <Property Name="Passbirth" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="DOB of Passenger"/>
+                <Property Name="ContentType" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase"/>
             </EntityType>
             <EntityType Name="ZC_FlightCountPerYear_XXType" sap:semantics="aggregate" sap:label="Consumption View FLIGHT Count" sap:content-version="1">
                 <Key>

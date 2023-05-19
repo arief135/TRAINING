@@ -118,6 +118,14 @@
                             "sap.ui.generic.app": {
                                 "title": "Custom Section"
                             }
+                        },
+                        "AfterFacet|ZC_Booking_XX|BasicData": {
+                            "className": "sap.ui.core.mvc.View",
+                            "viewName": "mika.sap.flightschedulexx.ext.view.BookingInvoice",
+                            "type": "XML",
+                            "sap.ui.generic.app": {
+                                "title": "Booking Invoice"
+                            }
                         }
                     }
                 }

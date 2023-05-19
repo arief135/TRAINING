@@ -1,0 +1,12 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="mika.sap.flightschedulexx.ext.controller.BookingInvoice">
+	
+	<Label id="_IDGenLabel1" text="BookingInvoice" />
+	
+    <PDFViewer id="_IDGenPDFViewer1" source="{/Source}" title="{/Title}" height="{/Height}">
+        <layoutData>
+            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
+        </layoutData>
+    </PDFViewer>
+
+</mvc:View>
