@@ -114,7 +114,11 @@
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
             "considerAnalyticalParameters": true,
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|ZC_FlSchdl_XX": {
@@ -146,7 +150,16 @@
                                     "name": "sap.suite.ui.generic.template.ObjectPage"
                                 },
                                 "entitySet": "ZC_Flight_XX",
-                                "navigationProperty": "to_Flight_XX"
+                                "navigationProperty": "to_Flight_XX",
+                                "pages": {
+                                    "ObjectPage|ZC_Booking_XX": {
+                                        "component": {
+                                            "name": "sap.suite.ui.generic.template.ObjectPage"
+                                        },
+                                        "entitySet": "ZC_Booking_XX",
+                                        "navigationProperty": "to_Booking_XX"
+                                    }
+                                }
                             }
                         }
                     }
