@@ -2,14 +2,14 @@
 
 specVersion: "2.5"
 metadata:
-  name: mika.sap.flightschedulexx
+  name: mika.sap.flightschd2
 type: application
 server:
   customMiddleware:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: true # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         ui5:
           path:
             - /resources
@@ -25,8 +25,13 @@ server:
         port: 35729
         path: webapp
         delay: 300
-    - name: fiori-tools-preview
-      afterMiddleware: fiori-tools-appreload
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
       configuration:
-        component: mika.sap.flightschedulexx
-        ui5Theme: sap_fiori_3
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZI_FLSCHDL10XXTP_CDS
+            metadataPath: ./webapp/localService/metadata.xml
+            mockdataPath: ./webapp/localService/data
+            generateMockData: true
+        annotations: []

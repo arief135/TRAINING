@@ -214,6 +214,10 @@
                     <Parameter Name="Carrid" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Airline"/>
                     <Parameter Name="Connid" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Connection Number"/>
                 </FunctionImport>
+                <FunctionImport Name="CustomActionInline" ReturnType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" EntitySet="ZC_FlSchdl_XX" m:HttpMethod="POST" sap:action-for="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType">
+                    <Parameter Name="Carrid" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Airline"/>
+                    <Parameter Name="Connid" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Connection Number"/>
+                </FunctionImport>
             </EntityContainer>
             <Annotations Target="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType/Cityfrom" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ValueList">

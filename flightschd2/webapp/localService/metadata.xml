@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://training:8001/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZI_FLSCHDL10XXTP_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZI_FlSchdl10XXTPType" sap:label="Transaction Interface SPFLI" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pfli_Uuid"/>
+                </Key>
+                <Property Name="Getmostpupularflightschedule_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pfli_Uuid" Type="Edm.Guid" Nullable="false" sap:label="Key"/>
+                <Property Name="Fltime" Type="Edm.Int32"/>
+                <Property Name="Deptime" Type="Edm.Time" Precision="0" sap:label="Departure time"/>
+                <Property Name="Arrtime" Type="Edm.Time" Precision="0" sap:label="Arrival Time"/>
+                <Property Name="Distance" Type="Edm.Decimal" Precision="9" Scale="4" sap:label="Distance"/>
+                <Property Name="Distid" Type="Edm.String" MaxLength="3" sap:label="Distance in" sap:semantics="unit-of-measure"/>
+                <Property Name="Fltype" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Charter flt"/>
+                <Property Name="Period" Type="Edm.Byte" sap:label="n day(s) later"/>
+                <Property Name="Carrid" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Airline"/>
+                <Property Name="Connid" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Connection Number"/>
+                <Property Name="Countryfr" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/>
+                <Property Name="Cityfrom" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Depart. city"/>
+                <Property Name="Airpfrom" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Departure airport"/>
+                <Property Name="Countryto" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/>
+                <Property Name="Cityto" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Arrival city"/>
+                <Property Name="Airpto" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Destination airport"/>
+            </EntityType>
+            <EntityContainer Name="ZI_FLSCHDL10XXTP_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZI_FlSchdl10XXTP" EntityType="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" sap:content-version="1"/>
+                <FunctionImport Name="A5E3DD37E629Getmostpupularflightschedule" ReturnType="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" EntitySet="ZI_FlSchdl10XXTP" m:HttpMethod="POST" sap:action-for="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" sap:applicable-path="Getmostpupularflightschedule_ac">
+                    <Parameter Name="Pfli_Uuid" Type="Edm.Guid" Mode="In" sap:label="Key"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>Carrid</PropertyPath>
+                        <PropertyPath>Connid</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://training:8001/sap/opu/odata/sap/ZI_FLSCHDL10XXTP_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://training:8001/sap/opu/odata/sap/ZI_FLSCHDL10XXTP_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

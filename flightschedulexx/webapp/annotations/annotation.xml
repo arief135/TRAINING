@@ -125,37 +125,48 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Carrid"/>
+                            <PropertyValue Property="Value" Path="Carrid" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Connid"/>
+                            <PropertyValue Property="Value" Path="Connid" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Countryfr"/>
+                            <PropertyValue Property="Value" Path="Countryfr" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Cityfrom"/>
+                            <PropertyValue Property="Value" Path="Cityfrom" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Airpfrom"/>
+                            <PropertyValue Property="Value" Path="Airpfrom" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Countryto"/>
+                            <PropertyValue Property="Value" Path="Countryto" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Cityto"/>
+                            <PropertyValue Property="Value" Path="Cityto" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Airpto"/>
+                            <PropertyValue Property="Value" Path="Airpto" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Distance"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
+                            <PropertyValue Property="Value" Path="Distance" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low" />
                         </Record>
                         <Record Type="UI.DataFieldForAction">
                             <PropertyValue Property="Label" String="Custom Action"/>
                             <PropertyValue Property="Action" String="ZUI_FLIGHTSCHEDULE_XX_SRV.ZUI_FLIGHTSCHEDULE_XX_SRV_Entities/CustomAction"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/ChangeSet"/>
+                            <!-- <PropertyValue Property="RequiresContext" Bool="true"/> -->
+                            <PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
                             <PropertyValue Property="Inline" Bool="false"/>
+                            <!-- <PropertyValue Property="Determining" Bool="true"/> -->
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Inline Action"/>
+                            <PropertyValue Property="Action" String="ZUI_FLIGHTSCHEDULE_XX_SRV.ZUI_FLIGHTSCHEDULE_XX_SRV_Entities/CustomActionInline"/>
+                            <PropertyValue Property="RequiresContext" Bool="true"/>
+                            <PropertyValue Property="Inline" Bool="true"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                     </Collection>
@@ -201,7 +212,7 @@
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value">
                                     <Apply Function="odata.concat">
-                                        <String>Airline: </String>
+                                        <String>Airline:</String>
                                         <Path>Carrid</Path>
                                     </Apply>
                                 </PropertyValue>
@@ -211,7 +222,7 @@
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value">
                                     <Apply Function="odata.concat">
-                                        <String>Connection Number: </String>
+                                        <String>Connection Number:</String>
                                         <Path>Connid</Path>
                                     </Apply>
                                 </PropertyValue>
@@ -293,8 +304,8 @@
                             <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SeatInformation" />
                         </Record>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Target" AnnotationPath="to_Booking_XX/@UI.LineItem"/>
-                            <PropertyValue Property="Label" String="Flight Bookings"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_Booking_XX/@UI.LineItem" />
+                            <PropertyValue Property="Label" String="Flight Bookings" />
                         </Record>
                     </Collection>
                 </Annotation>
@@ -337,53 +348,53 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Carrid"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Value" Path="Carrid" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Connid"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Value" Path="Connid" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Fldate"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Value" Path="Fldate" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Bookid"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Value" Path="Bookid" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Customid"/>
+                            <PropertyValue Property="Value" Path="Customid" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Custtype"/>
+                            <PropertyValue Property="Value" Path="Custtype" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Smoker"/>
+                            <PropertyValue Property="Value" Path="Smoker" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Luggweight"/>
+                            <PropertyValue Property="Value" Path="Luggweight" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Invoice"/>
+                            <PropertyValue Property="Value" Path="Invoice" />
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Class"/>
+                            <PropertyValue Property="Value" Path="Class" />
                         </Record>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.HeaderInfo">
                     <Record Type="UI.HeaderInfoType">
-                        <PropertyValue Property="TypeName" String="Booking"/>
-                        <PropertyValue Property="TypeNamePlural" String="Flight Bookings"/>
+                        <PropertyValue Property="TypeName" String="Booking" />
+                        <PropertyValue Property="TypeNamePlural" String="Flight Bookings" />
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="Bookid"/>
+                                <PropertyValue Property="Value" Path="Bookid" />
                             </Record>
                         </PropertyValue>
                         <PropertyValue Property="Description">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="Customid"/>
+                                <PropertyValue Property="Value" Path="Customid" />
                             </Record>
                         </PropertyValue>
                     </Record>
@@ -393,19 +404,19 @@
                         <PropertyValue Property="Data">
                             <Collection>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Agencynum"/>
+                                    <PropertyValue Property="Value" Path="Agencynum" />
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Class"/>
+                                    <PropertyValue Property="Value" Path="Class" />
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Forcuram"/>
+                                    <PropertyValue Property="Value" Path="Forcuram" />
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Loccuram"/>
+                                    <PropertyValue Property="Value" Path="Loccuram" />
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Invoice"/>
+                                    <PropertyValue Property="Value" Path="Invoice" />
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -414,9 +425,9 @@
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="Basic Data"/>
-                            <PropertyValue Property="ID" String="BasicData"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#BasicData"/>
+                            <PropertyValue Property="Label" String="Basic Data" />
+                            <PropertyValue Property="ID" String="BasicData" />
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#BasicData" />
                         </Record>
                     </Collection>
                 </Annotation>
