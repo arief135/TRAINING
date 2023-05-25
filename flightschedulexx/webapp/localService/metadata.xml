@@ -172,7 +172,7 @@
             <EntityContainer Name="ZUI_FLIGHTSCHEDULE_XX_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="I_CalendarMonth" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.I_CalendarMonthType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="ZC_Flight_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_Flight_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
-                <EntitySet Name="ZC_FlSchdl_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZC_FlSchdl_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" sap:content-version="1"/>
                 <EntitySet Name="ZC_VH_SGEOCITY_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_VH_SGEOCITY_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="ZI_Airline_XX" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZI_Airline_XXType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="I_CalendarMonthText" EntityType="ZUI_FLIGHTSCHEDULE_XX_SRV.I_CalendarMonthTextType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
@@ -210,6 +210,10 @@
                     <End EntitySet="ZC_FlSchdl_XX" Role="FromRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
                     <End EntitySet="ZI_Airline_XX" Role="ToRole_assoc_66074FB5F93499D5E6A26CF8F39F86B7"/>
                 </AssociationSet>
+                <FunctionImport Name="CustomAction" ReturnType="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType" EntitySet="ZC_FlSchdl_XX" m:HttpMethod="POST" sap:action-for="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType">
+                    <Parameter Name="Carrid" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Airline"/>
+                    <Parameter Name="Connid" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Connection Number"/>
+                </FunctionImport>
             </EntityContainer>
             <Annotations Target="ZUI_FLIGHTSCHEDULE_XX_SRV.ZC_FlSchdl_XXType/Cityfrom" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ValueList">
