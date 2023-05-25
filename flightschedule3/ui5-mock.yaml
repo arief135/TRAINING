@@ -1,13 +1,15 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
 specVersion: "2.5"
 metadata:
-  name: mika.sap.flightschd2
+  name: mika.sap.flightschedule3
 type: application
 server:
   customMiddleware:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false
+        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         ui5:
           path:
             - /resources
@@ -16,7 +18,7 @@ server:
         backend:
           - path: /sap
             url: https://training:8001
-            client: "002"
+            client: '002'
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -28,12 +30,8 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata/sap/ZI_FLSCHDL10XXTP_CDS
-            generateMockData: true
-            metadataXmlPath: ./webapp/localService/metadata.xml
-            mockdataRootPath: ./webapp/localService/data
-          - urlPath: /sap/opu/odata/sap/ZI_FLSCHDL10XXTP_CDS/
+          - urlPath: /sap/opu/odata/sap/ZUI_FLIGHTSCHEDULE_XX_SRV
             metadataPath: ./webapp/localService/metadata.xml
-            mockdataPath: ./webapp/localService/mockdata
+            mockdataPath: ./webapp/localService/data
             generateMockData: true
         annotations: []

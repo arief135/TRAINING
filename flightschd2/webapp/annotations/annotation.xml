@@ -38,6 +38,57 @@
                             <PropertyValue Property="Value" Path="Distance" />
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low" />
                         </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Custom Action"/>
+                            <PropertyValue Property="Action" String="ZI_FLSCHDL10XXTP_CDS.ZI_FLSCHDL10XXTP_CDS_Entities/ZI_FlSchdl10XXTPCustomaction"/>
+                            <PropertyValue Property="RequiresContext" Bool="true"/>
+                            <PropertyValue Property="Inline" Bool="false"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="TypeName" String="Flight Schedule"/>
+                        <PropertyValue Property="TypeNamePlural" String="Flight Schedules"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Carrid"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Connid"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeImageUrl" String="REPLACE_WITH_TYPEIMAGE_PATH"/>
+                        <PropertyValue Property="ImageUrl" String="REPLACE_WITH_IMAGE_URL_PATH"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="BasicData">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Carrid"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Connid"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Airpfrom"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Basic Data"/>
+                            <PropertyValue Property="ID" String="BasicData"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#BasicData"/>
+                        </Record>
                     </Collection>
                 </Annotation>
             </Annotations>

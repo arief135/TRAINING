@@ -9,6 +9,7 @@
                 <Key>
                     <PropertyRef Name="Pfli_Uuid"/>
                 </Key>
+                <Property Name="Customaction_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Getmostpupularflightschedule_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Pfli_Uuid" Type="Edm.Guid" Nullable="false" sap:label="Key"/>
                 <Property Name="Fltime" Type="Edm.Int32"/>
@@ -30,6 +31,9 @@
             <EntityContainer Name="ZI_FLSCHDL10XXTP_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="ZI_FlSchdl10XXTP" EntityType="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" sap:content-version="1"/>
                 <FunctionImport Name="A5E3DD37E629Getmostpupularflightschedule" ReturnType="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" EntitySet="ZI_FlSchdl10XXTP" m:HttpMethod="POST" sap:action-for="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" sap:applicable-path="Getmostpupularflightschedule_ac">
+                    <Parameter Name="Pfli_Uuid" Type="Edm.Guid" Mode="In" sap:label="Key"/>
+                </FunctionImport>
+                <FunctionImport Name="ZI_FlSchdl10XXTPCustomaction" ReturnType="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" EntitySet="ZI_FlSchdl10XXTP" m:HttpMethod="POST" sap:action-for="ZI_FLSCHDL10XXTP_CDS.ZI_FlSchdl10XXTPType" sap:applicable-path="Customaction_ac">
                     <Parameter Name="Pfli_Uuid" Type="Edm.Guid" Mode="In" sap:label="Key"/>
                 </FunctionImport>
             </EntityContainer>
